@@ -1,0 +1,16 @@
+{
+    "name": "@internal/ts-config",
+    "version": "0.0.1",
+    "author": "iivanovw7",
+    "private": true,
+    "files": [
+        "tsconfig.solid.json",
+        "tsconfig.common.json",
+        "tsconfig.node.json"
+    ],
+    "dependencies": {
+        "@types/node": "18.16.18",
+        "astro": "2.6.5",
+        "vite": "4.3.8"
+    }
+}

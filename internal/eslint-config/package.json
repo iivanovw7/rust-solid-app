@@ -1,0 +1,38 @@
+{
+    "name": "@internal/eslint-config",
+    "version": "0.0.1",
+    "author": "iivanovw7",
+    "private": true,
+    "exports": {
+        ".": {
+            "types": "./dist/index.d.ts",
+            "import": "./dist/index.mjs",
+            "require": "./dist/index.cjs"
+        },
+        "./solid": {
+            "types": "./dist/solid.d.ts",
+            "import": "./dist/solid.mjs",
+            "require": "./dist/solid.cjs"
+        }
+    },
+    "main": "./dist/index.cjs",
+    "module": "./dist/index.mjs",
+    "types": "./dist/index.d.ts",
+    "files": [
+        "dist"
+    ],
+    "scripts": {
+        "clean": "pnpm rimraf .turbo node_modules dist",
+        "lint": "pnpm eslint .",
+        "lint:fix": "pnpm eslint . --fix",
+        "stub": "pnpm unbuild --stub"
+    },
+    "dependencies": {
+        "@internal/ts-config": "workspace:*",
+        "@types/node": "18.16.18",
+        "eslint": "8.43.0",
+        "eslint-config-iivanovw7": "github:iivanovw7/eslint-config-iivanovw7",
+        "eslint-config-turbo": "1.10.3",
+        "unbuild": "1.2.1"
+    }
+}

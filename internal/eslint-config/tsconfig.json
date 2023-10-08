@@ -1,0 +1,5 @@
+{
+    "extends": "@internal/ts-config/tsconfig.node.json",
+    "$schema": "https://json.schemastore.org/tsconfig",
+    "include": ["src", "build.config.ts"]
+}

@@ -1,0 +1,27 @@
+{
+    "version": "1.0.0",
+    "name": "@internal/types",
+    "author": "iivanovw7",
+    "private": true,
+    "exports": {
+        ".": {
+            "default": "./src/index.ts"
+        }
+    },
+    "main": "./src/index.ts",
+    "module": "./src/index.ts",
+    "files": [
+        "dist"
+    ],
+    "scripts": {
+        "clean": "pnpm rimraf .turbo node_modules dist",
+        "lint": "pnpm eslint .",
+        "lint:fix": "pnpm eslint . --fix",
+        "stub": "pnpm unbuild --stub"
+    },
+    "devDependencies": {
+        "@internal/ts-config": "workspace:*",
+        "@internal/eslint-config": "workspace:*",
+        "unbuild": "1.2.1"
+    }
+}

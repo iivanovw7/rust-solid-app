@@ -1,0 +1,42 @@
+{
+    "version": "0.0.1",
+    "author": "iivanovw7",
+    "private": true,
+    "scripts": {
+        "bootstrap": "pnpm install && pnpm postinstall",
+        "build": "turbo build",
+        "clean": "turbo clean",
+        "dev": "turbo dev --no-cache --continue",
+        "dev:api": "cd apps/api && cargo watch -x run",
+        "doc": "turbo docs",
+        "lint": "turbo lint",
+        "lint:fix": "turbo lint:fix",
+        "pre-commit": "pnpm lint",
+        "preview": "turbo preview",
+        "prepare": "husky install",
+        "postinstall": "turbo stub --no-cache",
+        "preinstall": "npx only-allow pnpm",
+        "reinstall": "pnpm clean && pnpm bootstrap",
+        "release": "semantic-release"
+    },
+    "config": {
+        "commitizen": {
+            "useEmoji": true
+        }
+    },
+    "devDependencies": {
+        "browserslist": "4.21.9",
+        "commitizen": "4.3.0",
+        "cz-git": "1.6.1",
+        "husky": "8.0.3",
+        "rimraf": "5.0.1",
+        "semantic-release": "21.0.5",
+        "turbo": "latest"
+    },
+    "packageManager": "pnpm@8.6.10",
+    "name": "rust-solid-app",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/iivanovw7/rust-solid-app.git"
+    }
+}
