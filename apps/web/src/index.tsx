@@ -1,6 +1,8 @@
 /* @refresh reload */
 import './shared/styles/base.css';
-import { App } from './app';
+import { lazyImport } from '@/shared';
+
+const { App } = lazyImport(() => import('./app'));
 
 const MOUNT_NODE = document.getElementById('root') as HTMLElement;
 

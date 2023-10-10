@@ -75,11 +75,9 @@ export default defineConfig(({ mode }) => {
             port: 3000,
             proxy: {
                 '/api': {
-                    changeOrigin: true,
+                    channgeOrigin: true,
                     secure: false,
-                    target: isDev
-                        ? 'http://127.0.0.1:8088'
-                        : 'https://rust-solid-app.onrender.com',
+                    target: 'http://0.0.0.0:8088',
                     ws: true,
                 },
             },

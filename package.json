@@ -5,7 +5,9 @@
     "scripts": {
         "bootstrap": "pnpm install && pnpm postinstall",
         "build": "turbo build",
+        "build:api": "cd apps/api && ./build.sh",
         "clean": "turbo clean",
+        "commit": "cz",
         "dev": "turbo dev --no-cache --continue",
         "dev:api": "cd apps/api && cargo watch -x run",
         "doc": "turbo docs",
@@ -17,10 +19,12 @@
         "postinstall": "turbo stub --no-cache",
         "preinstall": "npx only-allow pnpm",
         "reinstall": "pnpm clean && pnpm bootstrap",
-        "release": "semantic-release"
+        "release": "semantic-release",
+        "start": "cd apps/api && cargo run --release"
     },
     "config": {
         "commitizen": {
+            "path": "cz-conventional-changelog",
             "useEmoji": true
         }
     },
@@ -38,5 +42,10 @@
     "repository": {
         "type": "git",
         "url": "https://github.com/iivanovw7/rust-solid-app.git"
+    },
+    "husky": {
+        "hooks": {
+            "prepare-commit-msg": "exec < /dev/tty && npx cz --hook || true"
+        }
     }
 }

@@ -1,12 +1,10 @@
-import { Footer } from '@/widgets';
-
-import { page } from './Home.styles';
+import { Footer, Page } from '@/widgets';
 
 export const Home = () => {
     return (
-        <div class={page}>
+        <Page>
             <h2>Home</h2>
             <Footer />
-        </div>
+        </Page>
     );
 };

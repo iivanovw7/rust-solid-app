@@ -56,6 +56,10 @@ psql -c "\l"
 # list users
 \du
 psql -c "\du"
+
+# create database
+CREATE DATABASE mydb
+
 # user
 CREATE USER xxxx WITH ENCRYPTED PASSWORD 'password';
 GRANT ALL PRIVILEGES ON DATABASE db to xxxxx;

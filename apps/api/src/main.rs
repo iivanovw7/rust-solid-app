@@ -10,6 +10,7 @@ mod auth;
 mod config;
 mod database;
 mod errors;
+mod files;
 mod handlers;
 mod helpers;
 mod models;
