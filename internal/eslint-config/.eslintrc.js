@@ -18,8 +18,10 @@ module.exports = {
             files: ["src/*.ts", "*.config.ts"],
             rules: {
                 "@typescript-eslint/indent": "off",
+                "@typescript-eslint/quotes": ["error", "double"],
                 "react/jsx-filename-extension": "off",
                 "import/no-default-export": "off",
+                "quotes": "off",
             },
         },
     ],

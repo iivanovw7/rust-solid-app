@@ -1,4 +1,4 @@
-import { page } from './Page.styles';
+import { page } from "./Page.styles";
 
 export type PageProps = ParentProps;
 

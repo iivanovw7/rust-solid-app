@@ -1,9 +1,11 @@
-import axios from 'axios';
+import axios from "axios";
+
+import { env } from "./../utils";
 
 export const axiosClient = axios.create({
-    baseURL: '/api',
+    baseURL: env.rustApiUrl,
     headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json"
     },
-    withCredentials: true,
+    withCredentials: true
 });

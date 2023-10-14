@@ -18,6 +18,12 @@ module.exports = {
             extends: ["./.eslintrc-auto-import.json"],
         },
         {
+            files: ['*.config.cjs'],
+            parserOptions: {
+                project: null
+            }
+        },
+        {
             files: ["*.config.ts"],
             rules: {
                 "import/no-default-export": "off",

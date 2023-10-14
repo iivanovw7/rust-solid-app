@@ -355,6 +355,7 @@ dependencies = [
  "futures",
  "lazy_static",
  "listenfd",
+ "log",
  "r2d2",
  "serde",
  "serde_json",

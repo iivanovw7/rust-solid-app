@@ -27,7 +27,7 @@ export const HttpStatus = {
     UNAUTHORIZED: 401,
 } as const;
 
-export type HttpStatus = typeof HttpStatus[keyof typeof HttpStatus];
+export type HttpStatus = (typeof HttpStatus)[keyof typeof HttpStatus];
 
 /*
     eslint-enable

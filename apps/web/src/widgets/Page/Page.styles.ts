@@ -1,3 +1,3 @@
-import { cx } from 'cva';
+import { cx } from "cva";
 
-export const page = cx('min-h-[inherit] w-full');
+export const page = cx("min-h-[inherit] w-full");
