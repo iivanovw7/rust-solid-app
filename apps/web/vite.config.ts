@@ -13,8 +13,10 @@ const pathResolve = (pathname: string) => {
     return resolve(root, ".", pathname);
 };
 
+// eslint-disable-next-line import/no-default-export
 export default defineConfig(({ mode }) => {
-    const isProd = mode === "production";
+    const isProduction = mode === "production";
+    const isDevelomentLocal = mode === "development-local";
 
     const plugins = [
         solidPlugin(),
@@ -38,7 +40,7 @@ export default defineConfig(({ mode }) => {
         }) as PluginOption,
     ];
 
-    if (! isProd) {
+    if (! isProduction) {
         plugins.push(basicSsl());
     }
 
@@ -77,7 +79,9 @@ export default defineConfig(({ mode }) => {
                 "/api": {
                     channgeOrigin: true,
                     secure: false,
-                    target: "http://0.0.0.0:8088",
+                    target: isDevelomentLocal
+                        ? "http://0.0.0.0:8088"
+                        : "https://goodnewseveryone.xyz",
                     ws: true,
                 },
             },

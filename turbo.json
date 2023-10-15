@@ -15,6 +15,7 @@
         "stub": {},
         "test": {},
         "doc": {},
+        "codegen:api": {},
         "preview": {},
         "clean": {
             "cache": false

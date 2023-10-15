@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
-export type RunningMode = "development" | "production" | "test";
+export type RunningMode = "development" | "development-local" | "production" | "test";
 
 export type Pixels = number;
 

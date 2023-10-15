@@ -5,7 +5,7 @@ import { healthApi } from "@/shared";
 import { box, footer, icon, link, section } from "./Footer.styles";
 
 export const Footer = () => {
-    const [health] = createResource(healthApi.getHealth);
+    const [health] = createResource(async () => healthApi.getHealth());
 
     return (
         <footer class={footer}>
