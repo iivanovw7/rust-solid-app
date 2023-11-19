@@ -1,5 +1,5 @@
 use crate::errors::ApiError;
-use crate::handlers::health;
+use crate::handlers::{auth, health, user};
 use actix_web::web;
 use log::info;
 use std::env;
@@ -17,13 +17,27 @@ pub fn get_swagger_service(cfg: &mut web::ServiceConfig) {
     #[derive(OpenApi)]
     #[openapi(
         paths(
-            health::get_health
+            health::get_health,
+            auth::login,
+            auth::logout,
+            user::get_user,
+            user::get_users,
+            user::create_user,
+            user::update_user,
+            user::delete_user,
         ),
         components(
-            schemas(health::HealthResponse, ApiError)
+            schemas(health::HealthResponse, ApiError),
+            schemas(auth::LoginRequest, ApiError),
+            schemas(user::UserResponse, ApiError),
+            schemas(user::UsersResponse, ApiError),
+            schemas(user::CreateUserRequest, ApiError),
+            schemas(user::UpdateUserRequest, ApiError),
         ),
         tags(
-            (name = "health")
+            (name = "health"),
+            (name = "auth"),
+            (name = "user")
         ),
     )]
     struct ApiDoc;

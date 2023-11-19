@@ -18,13 +18,13 @@ export const healthApi = {
    *
    * @tags health
    * @name GetHealth
-   * @request GET:/api/health
+   * @request GET:/health
    * @response `200` `QueryHealthResponse` Check api status.
    * @response `500` `QueryApiError` Internal server error
    */
   getHealth: (params: RequestParams = {}) =>
     http.request<QueryHealthResponse, QueryApiError>({
-      path: `/api/health`,
+      path: `/health`,
       method: "GET",
       format: "json",
       ...params

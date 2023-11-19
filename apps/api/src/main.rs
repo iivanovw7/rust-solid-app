@@ -13,6 +13,7 @@ mod errors;
 mod files;
 mod handlers;
 mod helpers;
+mod middleware;
 mod models;
 mod routes;
 mod schema;
@@ -20,6 +21,7 @@ mod server;
 mod state;
 mod swagger;
 mod tests;
+mod validate;
 
 #[actix_rt::main]
 async fn main() -> std::io::Result<()> {

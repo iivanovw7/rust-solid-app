@@ -76,7 +76,7 @@ export default defineConfig(({ mode }) => {
         server: {
             port: 3000,
             proxy: {
-                "/api": {
+                "^(/api|/health)": {
                     channgeOrigin: true,
                     secure: false,
                     target: isDevelomentLocal
