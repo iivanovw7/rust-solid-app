@@ -3,13 +3,8 @@
     "display": "Node",
     "extends": "./tsconfig.common.json",
     "compilerOptions": {
-        "lib": [
-            "dom",
-            "ESNext"
-        ],
-        "types": [
-            "node"
-        ],
+        "lib": ["dom", "ESNext"],
+        "types": ["node"],
         "noImplicitAny": true,
         "sourceMap": true,
         "noEmit": true,

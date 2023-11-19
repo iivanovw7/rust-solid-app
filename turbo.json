@@ -2,14 +2,20 @@
     "$schema": "https://turbo.build/schema.json",
     "pipeline": {
         "build": {
-            "dependsOn": ["^build"],
-            "outputs": ["build/dist/**"]
+            "dependsOn": [
+                "^build"
+            ],
+            "outputs": [
+                "build/dist/**"
+            ]
         },
         "lint": {},
         "lint:fix": {},
+        "format": {},
         "stub": {},
         "test": {},
         "doc": {},
+        "codegen:api": {},
         "preview": {},
         "clean": {
             "cache": false
@@ -18,10 +24,18 @@
             "cache": false,
             "persistent": true
         },
+        "dev:local": {
+            "cache": false,
+            "persistent": true
+        },
         "release": {
-            "dependsOn": ["^release"],
+            "dependsOn": [
+                "^release"
+            ],
             "outputMode": "new-only"
         }
     },
-    "globalDotEnv": [".env"]
+    "globalDotEnv": [
+        ".env"
+    ]
 }

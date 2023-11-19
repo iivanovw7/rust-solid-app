@@ -18,3 +18,5 @@ dist
 /bin
 Dockerfile
 .eslintrc.js
+postcss.config.js
+tailwind.config.js

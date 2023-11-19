@@ -1,10 +1,9 @@
-/* @refresh reload */
-import './shared/styles/base.css';
-import { lazyImport } from '@/shared';
+import "./index.css";
+import { lazyImport } from "@/shared";
 
-const { App } = lazyImport(() => import('./app'));
+const { App } = lazyImport(() => import("./app"));
 
-const MOUNT_NODE = document.getElementById('root') as HTMLElement;
+const MOUNT_NODE = document.getElementById("root") as HTMLElement;
 
 /**
  * Renders main application component.
@@ -15,7 +14,7 @@ const renderApp = (AppComponent: Component) => {
 };
 
 if (import.meta.env.DEV && ! (MOUNT_NODE instanceof HTMLElement)) {
-    console.error('Root element not found.');
+    console.error("Root element not found.");
 }
 
 /** Renders application at specified mount point. */

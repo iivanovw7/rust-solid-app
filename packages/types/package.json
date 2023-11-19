@@ -1,6 +1,6 @@
 {
     "version": "1.0.0",
-    "name": "@internal/types",
+    "name": "@packages/types",
     "author": "iivanovw7",
     "private": true,
     "exports": {

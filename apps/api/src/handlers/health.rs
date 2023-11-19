@@ -15,13 +15,13 @@ pub struct HealthResponse {
 
 #[utoipa::path(
     get,
-    path = "/api/health",
+    path = "/health",
     responses(
         (status = StatusCode::OK, description = "Check api status.", body = HealthResponse),
         (status = StatusCode::INTERNAL_SERVER_ERROR, description = "Internal server error", body = ApiError),
     )
 )]
-#[get("/api/health")]
+#[get("/health")]
 pub async fn get_health() -> Result<Json<HealthResponse>, ApiError> {
     respond_json(HealthResponse {
         status: "ok".into(),

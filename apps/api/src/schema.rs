@@ -8,6 +8,8 @@ diesel::table! {
         first_name -> Varchar,
         #[max_length = 100]
         last_name -> Varchar,
+        #[max_length = 36]
+        role -> Varchar,
         #[max_length = 100]
         email -> Varchar,
         #[max_length = 122]

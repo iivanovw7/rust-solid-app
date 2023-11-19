@@ -13,6 +13,8 @@ pub struct Config {
     pub session_name: String,
     pub session_secure: bool,
     pub session_timeout: i64,
+    pub jwt_expiration: i64,
+    pub jwt_key: String,
 }
 
 // Throw the Config struct into a CONFIG lazy_static to avoid multiple processing

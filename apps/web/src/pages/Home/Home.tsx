@@ -1,4 +1,4 @@
-import { Footer, Page } from '@/widgets';
+import { Footer, Page } from "@/widgets";
 
 export const Home = () => {
     return (

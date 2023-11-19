@@ -34,6 +34,9 @@ SESSION_NAME=auth
 SESSION_PATH=/
 SESSION_SECURE=false
 SESSION_TIMEOUT=20
+JWT_EXPIRATION=24
+JWT_KEY=4125442A472D4B614E645267556B58703273357638792F423F4528482B4D6251
+
 ```
 
 Setup `db` locally.
@@ -88,3 +91,54 @@ cargo test
 ### Docs
 
 After server is alive, swagger can be found `http://localhost:8088/api/swagger-ui/#`
+
+### Nginx
+
+Sample `nginx` configuration
+
+```bash
+server {
+    location {
+        proxy_pass http://localhost:8088;
+        proxy_http_version 1.1;
+        proxy_set_header X-Forwarded-Host $host;
+        proxy_set_header X-Forwarded-Server $server;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Real-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Real-Proto $scheme;
+        proxy_set_header Host $http_host;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection "Upgrade";
+        proxy_pass_request_headers on;
+    }
+
+    gzip on;
+    gzip_types text/html text/css image/jpg image/jpeg image/png image/svg;
+
+    listen [::]:443 ssl ipv6only=on;
+    listen 443 ssl;
+    ssl_certificate /etc/letsencrypt/live/example.com/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/example.com/privkey.pem;
+    include /etc/letsencrypt/options-ssl-nginx.conf;
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem;
+}
+
+server {
+    if ($host = www.example.com) {
+        return 301 https://$host$request_uri;
+    }
+
+    if ($host = example.com) {
+        return 301 https://$host$request_uri;
+    }
+
+    listen 80;
+    listen [::]:80;
+    server_name example.com www.example.com;
+
+    return 404;
+}
+
+
+
+```
